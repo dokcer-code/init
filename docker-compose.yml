@@ -20,6 +20,7 @@ services:
         volumes:
           - ./:/var/www/html
           - ./docker/config/php/php.ini:/usr/local/etc/php/php.ini
+          - ./docker/config/php/conf.d/docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
         networks:
           self:
             ipv4_address: ${PHP_HOST}
