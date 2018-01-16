@@ -2,7 +2,6 @@ version: '3'
 services:
     nginx:
         image: nginx:1.13.6
-        user: 1000:1000
         volumes:
           - ./:/var/www/html
           - ./docker/server/log/:/var/html/log
@@ -27,7 +26,6 @@ services:
             ipv4_address: ${PHP_HOST}
     mysql:
         image: mysql:5.7.20
-        user: 1000:1000
         environment:
           MYSQL_USER: ${MYSQL_USERNAME}
           MYSQL_PASSWORD: ${MYSQL_USERNAME}
