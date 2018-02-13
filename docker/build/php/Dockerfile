@@ -2,7 +2,7 @@ FROM php:7.1.12-fpm
 
 RUN apt-get  update
 
-RUN apt-get install -y libicu-dev && docker-php-ext-install intl
+RUN apt-get install -y libicu52 libicu-dev && docker-php-ext-install intl
 
 RUN pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug
 
