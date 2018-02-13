@@ -24,6 +24,8 @@ services:
         networks:
             self:
                 ipv4_address: ${PHP_HOST}
+        environment:
+            COMPOSER_HOME: '/var/composer'
     mysql:
         image: mysql:5.7.20
         environment:
