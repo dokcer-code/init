@@ -45,10 +45,14 @@ services:
             self:
                 ipv4_address: ${REDIS_HOST}
     node:
-        image: node:9.3.0
+        build:
+            context: docker/build/node
         working_dir: /var/www/html
         user: 1000:1000
+        environment:
+            NPM_CONFIG_PREFIX: '/var/www/node_modules'
         volumes:
+            - ./docker/server/node:/var/www/node_modules
             - ./:/var/www/html
 networks:
     self:
